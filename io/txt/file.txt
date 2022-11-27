@@ -1,1 +1,1 @@
-Imagine a message
+Imagine a message written with the buffered writer
