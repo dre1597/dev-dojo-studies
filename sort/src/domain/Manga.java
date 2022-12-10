@@ -1,27 +1,23 @@
 package domain;
 
 import java.util.Objects;
+import java.util.concurrent.ThreadLocalRandom;
 
 //public class Manga implements Comparable<Manga> {
 public class Manga {
-  private Long id;
+  private final Long id;
   private String title;
   private double price;
 
-  public Manga(Long id, String title, double price) {
-    Objects.requireNonNull(id, "Id must not be null");
+  public Manga(String title, double price) {
+    this.id = ThreadLocalRandom.current().nextLong();
     Objects.requireNonNull(title, "Title must not be null");
-    this.id = id;
     this.title = title;
     this.price = price;
   }
 
   public Long getId() {
     return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
   }
 
   public String getTitle() {
