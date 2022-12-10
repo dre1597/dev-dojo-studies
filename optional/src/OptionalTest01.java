@@ -12,7 +12,7 @@ public class OptionalTest01 {
     System.out.println(o2);
     System.out.println(o3);
 
-    Optional<String> name = Optional.ofNullable(findName("name1"));
+    Optional<String> name = findName("name1");
 
     String notFound = name.orElse("NOT FOUND");
     name.ifPresent(s -> System.out.println(s.toUpperCase()));
@@ -20,20 +20,20 @@ public class OptionalTest01 {
 
     System.out.println("-----");
 
-    Optional<String> name2 = Optional.ofNullable(findName("name2"));
+    Optional<String> name2 = findName("name2");
 
     String notFound2 = name2.orElse("NOT FOUND");
     name2.ifPresent(s -> System.out.println(s.toUpperCase()));
     System.out.println(notFound2);
   }
 
-  private static String findName(String name) {
+  private static Optional<String> findName(String name) {
     List<String> list = List.of("name2", "name3");
 
     int i = list.indexOf(name);
     if (i != -1) {
-      return list.get(i);
+      return Optional.of(list.get(i));
     }
-    return null;
+    return Optional.empty();
   }
 }
