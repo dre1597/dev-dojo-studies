@@ -2,7 +2,8 @@ package domain;
 
 import java.util.Objects;
 
-public class Manga implements Comparable<Manga> {
+//public class Manga implements Comparable<Manga> {
+public class Manga {
   private Long id;
   private String title;
   private double price;
@@ -61,8 +62,8 @@ public class Manga implements Comparable<Manga> {
     return Objects.hash(id, title);
   }
 
-  @Override
-  public int compareTo(Manga other) {
-    return this.id.compareTo(other.id);
-  }
+//  @Override
+//  public int compareTo(Manga other) {
+//    return this.id.compareTo(other.id);
+//  }
 }

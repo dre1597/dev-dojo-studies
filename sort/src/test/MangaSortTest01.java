@@ -1,9 +1,9 @@
 package test;
 
 import domain.Manga;
+import domain.MangaByIdComparator;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class MangaSortTest01 {
@@ -17,7 +17,7 @@ public class MangaSortTest01 {
       System.out.println(manga);
     }
 
-    Collections.sort(mangas);
+    mangas.sort(new MangaByIdComparator());
 
     for (Manga manga : mangas) {
       System.out.println(manga);
